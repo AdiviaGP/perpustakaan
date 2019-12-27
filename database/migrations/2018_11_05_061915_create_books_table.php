@@ -20,6 +20,8 @@ class CreateBooksTable extends Migration
             $table->string('nama_buku');
             $table->string('deskripsi');
             $table->integer('tahun_terbit');
+            $table->string('cover');
+            $table->string('status')
             $table->timestamps();
         });
     }
