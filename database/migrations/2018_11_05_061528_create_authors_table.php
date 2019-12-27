@@ -18,7 +18,7 @@ class CreateAuthorsTable extends Migration
             $table->string('nama_penulis');
             $table->string('jenis_kelamin');
             $table->string('tanggal_lahir');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }
