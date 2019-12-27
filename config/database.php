@@ -1,8 +1,9 @@
 <?php
 
+$DATABASE_URL=parse_url('DATABASE_URL');
+
 return [
 
-    $DATABASE_URL=parse_url('DATABASE_URL');
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
