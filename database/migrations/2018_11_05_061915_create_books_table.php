@@ -21,7 +21,7 @@ class CreateBooksTable extends Migration
             $table->string('deskripsi');
             $table->integer('tahun_terbit');
             $table->string('cover');
-            $table->string('status')
+            $table->string('status');
             $table->timestamps();
         });
     }
