@@ -1,6 +1,6 @@
 <?php
 
-$DATABASE_URL=parse_url('DATABASE_URL');
+$databaseUrl = parse_url(env('DATABASE_URL'));
 
 return [
 
@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,7 +60,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
+            'host' => $databaseUrl['host'],
+            'port' => $databaseUrl['port'],
+            'database' => substr($databaseUrl['path'], 1),
+            'username' => $databaseUrl['user'],
+            'password' => $databaseUrl['pass'],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
